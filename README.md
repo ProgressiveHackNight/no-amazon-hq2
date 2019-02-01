@@ -1,5 +1,17 @@
 # This is the repo for folks working on the website for the campaign to keep Amazon out of Long Island City!
 
+## Process Notes:
+Pull down the repo and make a branch for yourself that you can push to. When you're ready, submit a PR to merge to master and someone will check it out.
+
+We are designing for mobile first! Use browser dev tools or go to your comps IP address in the web browser on your phone to make sure things are looking the way you want them to.
+
+Scripts:
+
+`npm start` runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will automatically reload if you make edits (woot!)
+
 ## Site Outline:
 
 - Sticky Nav
@@ -28,14 +40,3 @@
 - Footer
   - Social media
   - Contact
-
-
-## Scripts:
-
-`npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
