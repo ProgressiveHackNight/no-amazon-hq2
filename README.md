@@ -1,4 +1,4 @@
-# This is the repo for folks working on the website for the campaign to keep Amazon out of Long Island City!
+# Website for the campaign to keep Amazon out of Long Island City!
 
 ## Process Notes:
 Pull down the repo and make a branch for yourself that you can push to. When you're ready, submit a PR to merge to master and someone will check it out.
