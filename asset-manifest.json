@@ -1,14 +1,13 @@
 {
-  "main.css": "/no-amazon-hq2/static/css/main.c0ae61cb.chunk.css",
-  "main.js": "/no-amazon-hq2/static/js/main.72906f7a.chunk.js",
-  "main.js.map": "/no-amazon-hq2/static/js/main.72906f7a.chunk.js.map",
-  "static/js/1.fa92c112.chunk.js": "/no-amazon-hq2/static/js/1.fa92c112.chunk.js",
-  "static/js/1.fa92c112.chunk.js.map": "/no-amazon-hq2/static/js/1.fa92c112.chunk.js.map",
+  "main.css": "/no-amazon-hq2/static/css/main.4a67b63c.chunk.css",
+  "main.js": "/no-amazon-hq2/static/js/main.32e50eb0.chunk.js",
+  "main.js.map": "/no-amazon-hq2/static/js/main.32e50eb0.chunk.js.map",
+  "static/js/1.4a34e45d.chunk.js": "/no-amazon-hq2/static/js/1.4a34e45d.chunk.js",
+  "static/js/1.4a34e45d.chunk.js.map": "/no-amazon-hq2/static/js/1.4a34e45d.chunk.js.map",
   "runtime~main.js": "/no-amazon-hq2/static/js/runtime~main.f943f116.js",
   "runtime~main.js.map": "/no-amazon-hq2/static/js/runtime~main.f943f116.js.map",
-  "static/media/logo.svg": "/no-amazon-hq2/static/media/logo.5d5d9eef.svg",
-  "static/css/main.c0ae61cb.chunk.css.map": "/no-amazon-hq2/static/css/main.c0ae61cb.chunk.css.map",
+  "static/css/main.4a67b63c.chunk.css.map": "/no-amazon-hq2/static/css/main.4a67b63c.chunk.css.map",
   "index.html": "/no-amazon-hq2/index.html",
-  "precache-manifest.260ce467d9ad8044a7ea410215998258.js": "/no-amazon-hq2/precache-manifest.260ce467d9ad8044a7ea410215998258.js",
+  "precache-manifest.0838334cfa29c001df66b82d3df3c949.js": "/no-amazon-hq2/precache-manifest.0838334cfa29c001df66b82d3df3c949.js",
   "service-worker.js": "/no-amazon-hq2/service-worker.js"
 }
