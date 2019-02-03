@@ -1,3 +1,21 @@
 .ContactYourRep {
   color: blue;
+  background-color: pink;
+  padding: 5%;
+}
+
+.repForm { 
+  display: flex;
+  flex-direction: column;
+}
+
+/* .repFormInput {
+  margin: 2vh 0 2vh 0;
+  width: 90vw;
+} */
+
+.repFormButton {
+  width: 90vw;
+  height: 5vh;
+  color: blue;
 }
