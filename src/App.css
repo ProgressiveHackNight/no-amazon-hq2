@@ -1,5 +1,5 @@
-@import url("skeleton.css");
-@import url("normalize.css");
+@import url("css/skeleton.css");
+@import url("css/normalize.css");
 
 .App {
   text-align: center;
