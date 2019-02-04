@@ -4,10 +4,10 @@ import '../css/Header.css';
 class Header extends Component {
   render() {
     return (
-      <div>
-          <p className="Header">
+      <div className="Header">
+          <h1>
             No Amazon HQ2 in NYC!
-          </p>
+          </h1>
       </div>
     );
   }

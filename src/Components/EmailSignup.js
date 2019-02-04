@@ -4,10 +4,10 @@ import '../css/EmailSignup.css';
 class EmailSignup extends Component {
   render() {
     return (
-      <div>
-          <p className="EmailSignup">
+      <div className="EmailSignup">
+          <h1>
             Sign up for the mailing list
-          </p>
+          </h1>
       </div>
     );
   }

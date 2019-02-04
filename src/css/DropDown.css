@@ -1,0 +1,9 @@
+.DropDown {
+  margin: 0 5em 2em 5em;
+  border: 2px solid black;
+}
+
+#headline {
+  cursor: pointer;
+  margin-bottom: 0;
+}

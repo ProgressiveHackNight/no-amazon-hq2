@@ -4,10 +4,10 @@ import '../css/Nav.css';
 class Nav extends Component {
   render() {
     return (
-      <div>
-          <p className="Nav">
+      <div className="Nav">
+          <h1>
             Nav Bar
-          </p>
+          </h1>
       </div>
     );
   }
