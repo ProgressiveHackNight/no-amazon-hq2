@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 import '../css/ContactYourRep.css';
+import { RepCard } from './index';
 import { key } from '../secrets';
+
 
 const google = require('google-client-api');
 
@@ -17,7 +19,8 @@ class ContactYourRep extends Component {
       state: "",
       zip: "",
       fullAddress: "",
-      canSubmit: false
+      canSubmit: false,
+      representativeInfoByAddress: {}
     }
     this.loadClient = this.loadClient.bind(this);
     this.execute = this.execute.bind(this);
@@ -54,15 +57,12 @@ class ContactYourRep extends Component {
 
   }
   // Make sure the client is loaded before calling this method.
-  execute(e) {
+  async execute(e) {
     e.preventDefault();
     const { gapi, fullAddress } = this.state;
-    return gapi.client.civicinfo.representatives.representativeInfoByAddress({ address: fullAddress, includeOffices: true})
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
+    const response = await gapi.client.civicinfo.representatives.representativeInfoByAddress({ address: fullAddress, includeOffices: true})
+    await this.setState({ representativeInfoByAddress: response.result })
+    console.log("executed: ", this.state);
   }
 
   async toggleForm() {
@@ -88,9 +88,23 @@ class ContactYourRep extends Component {
             <input value={city} name="city" type="text" placeholder="City" className="repFormInput" onChange={this.handleChange}/>
             <input value={state} name="state" type="text" placeholder="State" className="repFormInput" onChange={this.handleChange}/>
             <input value={zip} name="zip" type="text" placeholder="ZIP" className="repFormInput" onChange={this.handleChange}/>
-            { canSubmit && <button type="submit" onClick={this.execute} className="repFormButton">Who's your rep?</button> }
-            { !canSubmit && <button type="submit" disabled>Who's your rep?</button>}
+            { canSubmit 
+              ? <button type="submit" onClick={this.execute} className="repFormButton">Who's your rep?</button>
+              : <button type="submit" disabled>Who's your rep?</button>
+            }
           </form>
+         }
+         {
+          Object.keys(this.state.representativeInfoByAddress).length
+          ? <RepCard 
+            name={this.state.representativeInfoByAddress.officials[7].name}
+            imgUrl={this.state.representativeInfoByAddress.officials[7].photoUrl}
+            phone={this.state.representativeInfoByAddress.officials[7].phones[0]}
+            email={this.state.representativeInfoByAddress.officials[7].emails[0]}
+            channels={this.state.representativeInfoByAddress.officials[7].channels}
+          />
+          : <p></p>
+          
          }
       </div>
     );
