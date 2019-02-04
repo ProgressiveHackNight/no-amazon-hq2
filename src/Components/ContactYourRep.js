@@ -13,12 +13,7 @@ class ContactYourRep extends Component {
     this.state = {
       showForm: false,
       gapi: null,
-      addressLine1: "",
-      addressLine2: "",
-      city: "",
-      state: "",
-      zip: "",
-      fullAddress: "",
+      address: "",
       canSubmit: false,
       representativeInfoByAddress: {}
     }
@@ -44,24 +39,19 @@ class ContactYourRep extends Component {
   }
 
   async handleChange(e) {
-    const { addressLine1, addressLine2, city, state, zip } = this.state;
-    await this.setState({ [e.target.name]: e.target.value });
-  
-    if (addressLine1 && addressLine2 && city && state && zip){
-      await this.setState({ fullAddress: addressLine1 + addressLine2 + city + state + zip }); 
-    }
-
-    if (zip.length === 4 || zip.length === 8) {
-      await this.enableSubmit();
-    }
-
+    await this.setState({ address: e.target.value });
   }
+
   // Make sure the client is loaded before calling this method.
   async execute(e) {
     e.preventDefault();
-    const { gapi, fullAddress } = this.state;
-    const response = await gapi.client.civicinfo.representatives.representativeInfoByAddress({ address: fullAddress, includeOffices: true})
-    await this.setState({ representativeInfoByAddress: response.result })
+    const { gapi, address } = this.state;
+    try {
+    	const response = await gapi.client.civicinfo.representatives.representativeInfoByAddress({ address: address, includeOffices: true})
+        await this.setState({ representativeInfoByAddress: response.result })
+    } catch (err) {
+    	console.error('error fetching representative info', err);
+    } 
     console.log("executed: ", this.state);
   }
 
@@ -75,7 +65,7 @@ class ContactYourRep extends Component {
 
 
   render() {
-    const { addressLine1, addressLine2, city, state, zip, canSubmit } = this.state;
+    const { address, canSubmit } = this.state;
     return (
       <div className="ContactYourRep">
           <button className="ContactYourRep" onClick={this.toggleForm} style={{padding: "2%"}}>
@@ -83,29 +73,15 @@ class ContactYourRep extends Component {
           </button>
          { this.state.showForm && 
           <form style={{display: "flex", flexDirection: "column"}}>
-            <input value={addressLine1} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
-            <input value={addressLine2} name="addressLine2" type="text" placeholder="Address Line 2 (optional)" className="repFormInput" onChange={this.handleChange}/>
-            <input value={city} name="city" type="text" placeholder="City" className="repFormInput" onChange={this.handleChange}/>
-            <input value={state} name="state" type="text" placeholder="State" className="repFormInput" onChange={this.handleChange}/>
-            <input value={zip} name="zip" type="text" placeholder="ZIP" className="repFormInput" onChange={this.handleChange}/>
-            { canSubmit 
+            <input value={address} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
+            { !canSubmit 
               ? <button type="submit" onClick={this.execute} className="repFormButton">Who's your rep?</button>
               : <button type="submit" disabled>Who's your rep?</button>
             }
+
           </form>
          }
-         {
-          Object.keys(this.state.representativeInfoByAddress).length
-          ? <RepCard 
-            name={this.state.representativeInfoByAddress.officials[7].name}
-            imgUrl={this.state.representativeInfoByAddress.officials[7].photoUrl}
-            phone={this.state.representativeInfoByAddress.officials[7].phones[0]}
-            email={this.state.representativeInfoByAddress.officials[7].emails[0]}
-            channels={this.state.representativeInfoByAddress.officials[7].channels}
-          />
-          : <p></p>
           
-         }
       </div>
     );
   }
