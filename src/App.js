@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import Nav from './Components/Nav';
-import Header from './Components/Header';
-import LearnMore from './Components/LearnMore';
-import TakeAction from './Components/TakeAction';
-import ContactYourRep from './Components/ContactYourRep';
-import EmailSignup from './Components/EmailSignup';
-import Footer from './Components/Footer';
-
+import { ContactYourRep, DropDown, EmailSignup, Footer, Header, LearnMore,  Nav, RepCard, TakeAction } from './Components';
 import './App.css';
 
 
