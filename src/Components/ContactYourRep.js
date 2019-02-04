@@ -7,6 +7,9 @@ import { key } from '../secrets';
 
 const google = require('google-client-api');
 
+const local_pattern = /ocd-division\/country:us\/state:\D{2}\/place:\D+/;
+const district_pattern = /ocd-division\/country:us\/district:\D+/;
+
 class ContactYourRep extends Component {
   constructor() {
     super();
@@ -68,9 +71,9 @@ class ContactYourRep extends Component {
     const { address, canSubmit } = this.state;
     return (
       <div className="ContactYourRep">
-          <button className="ContactYourRep" onClick={this.toggleForm} style={{padding: "2%"}}>
+          <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
             Contact Your Rep
-          </button>
+          </h1>
          { this.state.showForm && 
           <form style={{display: "flex", flexDirection: "column"}}>
             <input value={address} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
