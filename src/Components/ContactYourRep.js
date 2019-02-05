@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import '../css/ContactYourRep.css';
 import { RepCard } from './index';
-import { googleKey, nycAppId, nycAppKey } from '../secrets';
+import { googleKey } from '../secrets';
 const jsonp = require('jsonp');
 
 const google = require('google-client-api');
@@ -42,13 +42,7 @@ class ContactYourRep extends Component {
     gapi.client.setApiKey(googleKey);
     // const response = await axios.get(`https://api.cityofnewyork.us/geoclient/v1/address.json?houseNumber=314&street=west 100 st&borough=manhattan&app_id=${nycAppId}&app_key=${nycAppKey}`, { crossorigin: true })
     // console.log('this is the response: ', response);
-    jsonp(`https://api.cityofnewyork.us/geoclient/v1/address.json?houseNumber=314&street=west 100 st&borough=manhattan&app_id=${nycAppId}&app_key=${nycAppKey}`, null, function (err, data) {
-      if (err) {
-        console.error(err.message);
-      } else {
-        console.log(data);
-      }
-    });
+    
     try {
       await gapi.client.load("https://content.googleapis.com/discovery/v1/apis/civicinfo/v2/rest");
       console.log("google client loaded for API");

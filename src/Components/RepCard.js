@@ -30,8 +30,8 @@ export default class RepCard extends Component {
         <h2>{name}</h2>
         {phone && <h3>Phone: {phone}</h3>}
         {email && <h4>Email: {email}</h4>}
-        {twitterHandle && <a href={`twitter.com/${twitterHandle}`}><img src={require("../assets/twitter.png")} alt="twitter"/></a>}
-        {facebookHandle && <a href={`facebook.com/${facebookHandle}`}><img src={require("../assets/facebook.png")} alt="facebook"/></a>}
+        {twitterHandle && <a href={`twitter.com/${twitterHandle}`}><img src={require("../utils/twitter.png")} alt="twitter"/></a>}
+        {facebookHandle && <a href={`facebook.com/${facebookHandle}`}><img src={require("../utils/facebook.png")} alt="facebook"/></a>}
       </div>
     )
   }
