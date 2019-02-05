@@ -7,6 +7,7 @@
     "axios": "^0.18.0",
     "google-client-api": "^1.0.4",
     "googleapis": "^37.1.0",
+    "jsonp": "^0.2.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
