@@ -7,9 +7,6 @@ import { getOCDID } from '../utils/lookup';
 
 const google = require('google-client-api');
 
-// const local_pattern = /ocd-division\/country:us\/state:\D{2}\/place:\D+/;
-// const district_pattern = /ocd-division\/country:us\/district:\D+/;
-
 class ContactYourRep extends Component {
   constructor() {
     super();
@@ -18,7 +15,6 @@ class ContactYourRep extends Component {
       gapi: null,
       address: "",
       districtNumber: "",
-      canSubmit: false,
       federalAndState: [],
       local: [],
       normalizedInput: {}
@@ -28,7 +24,6 @@ class ContactYourRep extends Component {
     this.getFederalAndStateReps = this.getFederalAndStateReps.bind(this);
     this.getLocalReps = this.getLocalReps.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
-    this.enableSubmit = this.enableSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -111,30 +106,20 @@ class ContactYourRep extends Component {
     await this.setState(prevState => ({ showForm: !prevState.showForm }))
   }
 
-  async enableSubmit() {
-    await this.setState(prevState => ({ canSubmit: !prevState.canSubmit }))
-  }
-
-
   render() {
-    const { address, canSubmit } = this.state;
+    const { address } = this.state;
    
     return (
       <div className="ContactYourRep">
           <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
             Contact Your Rep
           </h1>
-         { this.state.showForm && 
+        { this.state.showForm && 
           <form style={{display: "flex", flexDirection: "column"}}>
             <input value={address} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
-            { !canSubmit 
-              ? <button type="submit" onClick={this.getAllReps} className="repFormButton">Who's your rep?</button>
-              : <button type="submit" disabled>Who's your rep?</button>
-            }
-
+            <button type="submit" onClick={this.getAllReps} className="repFormButton">Who's your rep?</button>
           </form>
-         }
-          
+        } 
       </div>
     );
   }
