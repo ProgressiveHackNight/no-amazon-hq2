@@ -64,9 +64,8 @@ class ContactYourRep extends Component {
     } catch (err) {
       console.log('error fetching local reps', err);
     }
-
-    return federalAndStateReps.concat(localReps);
     
+    return federalAndStateReps.concat(localReps);
   }
   // Make sure the client is loaded before calling this method.
   async getFederalAndStateReps() {
