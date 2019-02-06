@@ -44,7 +44,6 @@ class ContactYourRep extends Component {
     
     try {
       await gapi.client.load("https://content.googleapis.com/discovery/v1/apis/civicinfo/v2/rest");
-      console.log("google client loaded for API");
     } catch(err) {
       console.error("Error loading google client for API", err);
     }
@@ -119,7 +118,7 @@ class ContactYourRep extends Component {
 
   render() {
     const { address, canSubmit } = this.state;
-    console.log('this.state', this.state);
+   
     return (
       <div className="ContactYourRep">
           <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
