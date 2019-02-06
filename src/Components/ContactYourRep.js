@@ -20,6 +20,7 @@ class ContactYourRep extends Component {
       districtNumber: "",
       canSubmit: false,
       federalAndState: [],
+      local: [],
       normalizedInput: {}
     }
     this.loadClient = this.loadClient.bind(this);
@@ -69,6 +70,8 @@ class ContactYourRep extends Component {
     } catch (err) {
       console.log('error fetching local reps', err);
     }
+
+    return federalAndStateReps.concat(localReps);
     
   }
   // Make sure the client is loaded before calling this method.
@@ -90,15 +93,19 @@ class ContactYourRep extends Component {
     } catch(err) {
       console.error('error fetching ocd id', err);
     }
-
-    try {
-      const response = await this.state.gapi.client.civicinfo.representatives.representativeInfoByDivision({ocdId: OCDID});
-      const localReps = response.result.officials;
-      await this.setState({ localReps });
-      return localReps;
-    } catch(err) {
-      console.error('error fetching local reps', err);
+    // for addresses in NYC
+    if (OCDID !== 'notNYC') {
+      try {
+        const response = await this.state.gapi.client.civicinfo.representatives.representativeInfoByDivision({ocdId: OCDID});
+        const localReps = response.result.officials;
+        await this.setState({ local: localReps });
+        return localReps;
+      } catch(err) {
+        console.error('error fetching local reps', err);
+      }
     }
+    // for addresses not in NYC, no local reps will be retrieved
+    return [];
   }
 
   async toggleForm() {
@@ -112,7 +119,7 @@ class ContactYourRep extends Component {
 
   render() {
     const { address, canSubmit } = this.state;
-    console.log("this.state", this.state);
+    console.log('this.state', this.state);
     return (
       <div className="ContactYourRep">
           <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>

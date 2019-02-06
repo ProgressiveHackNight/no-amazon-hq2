@@ -1,4 +1,3 @@
-import jsonp from 'jsonp';
 import axiosPro from 'axios-jsonp-pro';
 import { nycAppId, nycAppKey } from '../secrets';
 
@@ -30,28 +29,14 @@ const parseNormalizedInput = normalizedInput => {
 }
 
 const getCityCouncilDistrict = async normalizedInput => {
-
   const { streetNo, streetName, zip } = parseNormalizedInput(normalizedInput);
-  console.log('the info: ', streetNo, streetName, zip);
   const apiUrl = `https://api.cityofnewyork.us/geoclient/v1/address.json?houseNumber=${streetNo}&street=${streetName}&zip=${zip}&app_id=${nycAppId}&app_key=${nycAppKey}`; 
-  // let districtNumber = 0;
   try {
     const data = await axiosPro.jsonp(apiUrl);
-    console.log('the data: ', data);
     return data.address.cityCouncilDistrict;
   } catch(err) {
     console.error('error fetching city council district number', err);
   }
-  // jsonp(apiUrl, null, function (err, data) {
-  //     if (err) {
-  //       console.error(err.message);
-  //     } else {
-  //       console.log('the data.address from get city council district: ', data.address);
-  //       return data.address.cityCouncilDistrict;
-  //     }
-  //   });
-
-    // return districtNumber;
 }
 const isNYC = county => {
   const nycCounties = ['Bronx County', 'Kings County', 'New York County', 'Richmond County', 'Queens County'];
@@ -65,7 +50,7 @@ export const getOCDID = async (divisions, normalizedInput) => {
         divisionWithCounty =  OCDIDs[3],
         divisionWithoutCounty = OCDIDs[4];
   const county = divisions[divisionWithCounty]["name"];
-  if (isNYC(county)) return`${divisionWithoutCounty}/council_district:${cityCouncilDistrict}`;
-  else return '';
+  if (isNYC(county) && cityCouncilDistrict) return`${divisionWithoutCounty}/council_district:${cityCouncilDistrict}`;
+  else return 'notNYC';
 }
 
