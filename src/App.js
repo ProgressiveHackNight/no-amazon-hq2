@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ContactYourRep, DropDown, EmailSignup, Footer, Header, LearnMore,  Nav, RepCard, TakeAction } from './Components';
+import { ContactYourRep, DropDown, EmailSignup, Footer, Header, LearnMore,  Nav, TakeAction } from './Components';
 import './App.css';
 
 
