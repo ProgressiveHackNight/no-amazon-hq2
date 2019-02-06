@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
-
 
 import '../css/ContactYourRep.css';
 import { RepCard } from './index';
 import { googleKey } from '../secrets';
-const jsonp = require('jsonp');
+import { getOCDID } from '../utils/lookup';
 
 const google = require('google-client-api');
 
@@ -22,10 +19,13 @@ class ContactYourRep extends Component {
       address: "",
       districtNumber: "",
       canSubmit: false,
-      representativeInfoByAddress: {}
+      federalAndState: [],
+      normalizedInput: {}
     }
     this.loadClient = this.loadClient.bind(this);
-    this.execute = this.execute.bind(this);
+    this.getAllReps = this.getAllReps.bind(this);
+    this.getFederalAndStateReps = this.getFederalAndStateReps.bind(this);
+    this.getLocalReps = this.getLocalReps.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
     this.enableSubmit = this.enableSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -40,8 +40,6 @@ class ContactYourRep extends Component {
   async loadClient() {
     const { gapi } = this.state;
     gapi.client.setApiKey(googleKey);
-    // const response = await axios.get(`https://api.cityofnewyork.us/geoclient/v1/address.json?houseNumber=314&street=west 100 st&borough=manhattan&app_id=${nycAppId}&app_key=${nycAppKey}`, { crossorigin: true })
-    // console.log('this is the response: ', response);
     
     try {
       await gapi.client.load("https://content.googleapis.com/discovery/v1/apis/civicinfo/v2/rest");
@@ -55,18 +53,52 @@ class ContactYourRep extends Component {
   async handleChange(e) {
     await this.setState({ address: e.target.value });
   }
-
-  // Make sure the client is loaded before calling this method.
-  async execute(e) {
+  
+  async getAllReps(e) {
     e.preventDefault();
+    let federalAndStateReps = [],
+        localReps = [];
+    try {
+      federalAndStateReps = await this.getFederalAndStateReps();
+    } catch(err) {
+      console.log('error fetching federal and state reps', err);
+    }
+    
+    try {
+      localReps = await this.getLocalReps();
+    } catch (err) {
+      console.log('error fetching local reps', err);
+    }
+    
+  }
+  // Make sure the client is loaded before calling this method.
+  async getFederalAndStateReps() {
     const { gapi, address } = this.state;
     try {
-    	const response = await gapi.client.civicinfo.representatives.representativeInfoByAddress({ address: address, includeOffices: true})
-        await this.setState({ representativeInfoByAddress: response.result })
+    	const response = await gapi.client.civicinfo.representatives.representativeInfoByAddress({ address: address, includeOffices: true});
+      await this.setState({ federalAndState: response.result["officials"], normalizedInput: response.result["normalizedInput"], divisions: response.result["divisions"] });
+      return this.state.federalAndState;
     } catch (err) {
     	console.error('error fetching representative info', err);
     } 
-    console.log("executed: ", this.state);
+  }
+
+  async getLocalReps() {
+    let OCDID;
+    try { 
+      OCDID = await getOCDID(this.state.divisions, this.state.normalizedInput);
+    } catch(err) {
+      console.error('error fetching ocd id', err);
+    }
+
+    try {
+      const response = await this.state.gapi.client.civicinfo.representatives.representativeInfoByDivision({ocdId: OCDID});
+      const localReps = response.result.officials;
+      await this.setState({ localReps });
+      return localReps;
+    } catch(err) {
+      console.error('error fetching local reps', err);
+    }
   }
 
   async toggleForm() {
@@ -80,6 +112,7 @@ class ContactYourRep extends Component {
 
   render() {
     const { address, canSubmit } = this.state;
+    console.log("this.state", this.state);
     return (
       <div className="ContactYourRep">
           <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
@@ -89,7 +122,7 @@ class ContactYourRep extends Component {
           <form style={{display: "flex", flexDirection: "column"}}>
             <input value={address} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
             { !canSubmit 
-              ? <button type="submit" onClick={this.execute} className="repFormButton">Who's your rep?</button>
+              ? <button type="submit" onClick={this.getAllReps} className="repFormButton">Who's your rep?</button>
               : <button type="submit" disabled>Who's your rep?</button>
             }
 
