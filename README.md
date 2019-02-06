@@ -33,6 +33,7 @@ Scripts:
 - Contact your rep
   - Enter address
   - Get back name of rep, position on Amazon deal, contact info
+  - list of NYC city council reps, for cross referencing with results from form submission: https://docs.google.com/spreadsheets/d/1GubDXKSzwZZzHv82nkBMpx9-OM8f5RMwXPMPkB5wKSA/edit?ts=5c17e963#gid=526363255
   - Script for calling
 - Email modal
   - Sign up for email blasts
