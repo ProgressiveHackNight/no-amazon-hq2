@@ -1,3 +1,23 @@
 .ContactYourRep {
-  color: blue;
+  border: 2px solid black;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
 }
+
+.repForm { 
+  display: flex;
+  flex-direction: column;
+}
+
+.repFormInput {
+  border: none;
+}
+
+/*.repFormButton {*/
+  /*width: 10vw;*/
+  /*height: 5vh;*/
+  /*color: blue;*/
+  /*margin: 5%;*/
+/*}*/
+
