@@ -18,22 +18,25 @@ Scripts:
 - Header
   - Logo
   - Title
-- Sticky modal (dismissable)
-  - Sign up for email blasts
 - Learn more
   - Bullet points (click to expand more info)
+  - Jobs, Housing, Transportation (??)
 - Take action
-  - Take an action now
+  - Take an action now (click to expand)
     - Sign pledge
     - Sign up to host a house party (?)
-  - Upcoming actions
+  - Upcoming actions (click to expand)
     - Rallies
     - Phone banking
+    - Canvassing
     - Meetings
 - Contact your rep
   - Enter address
   - Get back name of rep, position on Amazon deal, contact info
+  - list of NYC city council reps, for cross referencing with results from form submission: https://docs.google.com/spreadsheets/d/1GubDXKSzwZZzHv82nkBMpx9-OM8f5RMwXPMPkB5wKSA/edit?ts=5c17e963#gid=526363255
   - Script for calling
+- Email modal
+  - Sign up for email blasts
 - Footer
   - Social media
   - Contact

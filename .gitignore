@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 src/secrets.js
-src/Components/secrets.js
 
 .idea/*
+
