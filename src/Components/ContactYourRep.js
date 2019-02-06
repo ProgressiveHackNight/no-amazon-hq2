@@ -108,7 +108,6 @@ class ContactYourRep extends Component {
 
   render() {
     const { address } = this.state;
-   
     return (
       <div className="ContactYourRep">
           <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
