@@ -1,5 +1,4 @@
 .LearnMore {
-  padding: 2em 0 1em 0;
-  background:rgb(33, 31, 30);
-  color: white;
+  border: 2px solid black;
+  margin-bottom: 2em;
 }

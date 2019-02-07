@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DropDown from './DropDown';
-import action from '../utils/take-action.jpg';
 import '../css/TakeAction.css';
 
 class TakeAction extends Component {
@@ -28,15 +27,12 @@ class TakeAction extends Component {
   render() {
     return (
       <div className="TakeAction">
-          <img src={action} alt="Woman holding sign Amazon Causes Gentrification"/>
-          <div id="action-text">
-            <h1>
-              Take Action
-            </h1>
-            {this.state.bullets.map((bullet)=>{
-              return <DropDown key={bullet.headline} headline={bullet.headline} text={bullet.text}/> 
-            })}
-          </div>
+          <h1>
+            Take Action
+          </h1>
+          {this.state.bullets.map((bullet)=>{
+            return <DropDown key={bullet.headline} headline={bullet.headline} text={bullet.text}/> 
+          })}
       </div>
     );
   }
