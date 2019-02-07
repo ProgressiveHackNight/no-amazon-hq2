@@ -1,13 +1,15 @@
 {
-  "main.css": "/no-amazon-hq2/static/css/main.4c14f60f.chunk.css",
-  "main.js": "/no-amazon-hq2/static/js/main.465e83ae.chunk.js",
-  "main.js.map": "/no-amazon-hq2/static/js/main.465e83ae.chunk.js.map",
-  "static/js/1.f739feb7.chunk.js": "/no-amazon-hq2/static/js/1.f739feb7.chunk.js",
-  "static/js/1.f739feb7.chunk.js.map": "/no-amazon-hq2/static/js/1.f739feb7.chunk.js.map",
+  "main.css": "/no-amazon-hq2/static/css/main.c0767f55.chunk.css",
+  "main.js": "/no-amazon-hq2/static/js/main.99865aea.chunk.js",
+  "main.js.map": "/no-amazon-hq2/static/js/main.99865aea.chunk.js.map",
+  "static/js/1.39ef1c47.chunk.js": "/no-amazon-hq2/static/js/1.39ef1c47.chunk.js",
+  "static/js/1.39ef1c47.chunk.js.map": "/no-amazon-hq2/static/js/1.39ef1c47.chunk.js.map",
   "runtime~main.js": "/no-amazon-hq2/static/js/runtime~main.f943f116.js",
   "runtime~main.js.map": "/no-amazon-hq2/static/js/runtime~main.f943f116.js.map",
-  "static/css/main.4c14f60f.chunk.css.map": "/no-amazon-hq2/static/css/main.4c14f60f.chunk.css.map",
+  "static/css/main.c0767f55.chunk.css.map": "/no-amazon-hq2/static/css/main.c0767f55.chunk.css.map",
+  "static/media/hq2-frowny-face-01.png": "/no-amazon-hq2/static/media/hq2-frowny-face-01.4d3b2996.png",
+  "static/media/take-action.jpg": "/no-amazon-hq2/static/media/take-action.50789996.jpg",
   "index.html": "/no-amazon-hq2/index.html",
-  "precache-manifest.f77877002a6660833bf1168a9503975b.js": "/no-amazon-hq2/precache-manifest.f77877002a6660833bf1168a9503975b.js",
+  "precache-manifest.e3731615e3727e0bf97c8f28bc68d3d8.js": "/no-amazon-hq2/precache-manifest.e3731615e3727e0bf97c8f28bc68d3d8.js",
   "service-worker.js": "/no-amazon-hq2/service-worker.js"
 }
