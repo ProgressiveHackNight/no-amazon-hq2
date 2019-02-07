@@ -1,9 +1,18 @@
 .DropDown {
-  margin: 0 5em 2em 5em;
-  border: 2px solid black;
+  padding: 0 5em 0 5em;
 }
 
 #headline {
   cursor: pointer;
+  padding-bottom: 1em;
   margin-bottom: 0;
+}
+
+.DropDown ul {
+  list-style: none;
+  text-align: left;
+}
+
+.DropDown li {
+  margin: 0;
 }
