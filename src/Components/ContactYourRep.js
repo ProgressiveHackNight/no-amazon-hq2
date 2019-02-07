@@ -69,7 +69,7 @@ class ContactYourRep extends Component {
       console.log('error fetching local reps', err);
     }
     
-    await this.setState({allReps: federalAndStateReps.slice(2).concat(localReps)});
+    await this.setState({allReps: federalAndStateReps.slice(2).concat(localReps)}); // i'd like to slice off their heads but this will have to do.
   }
   // Make sure the client is loaded before calling this method.
   async getFederalAndStateReps() {
