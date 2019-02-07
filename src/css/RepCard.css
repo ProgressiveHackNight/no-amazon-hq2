@@ -1,0 +1,39 @@
+.repCard {
+  display: flex;
+  -webkit-box-shadow: 18px 13px 33px -2px rgba(173,173,173,1);
+  -moz-box-shadow: 18px 13px 33px -2px rgba(173,173,173,1);
+  box-shadow: 18px 13px 33px -2px rgba(173,173,173,1);
+  border: 0.5px grey;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+.hideBrokenImg {
+  display: none;
+}
+
+.showImg {
+  
+}
+
+@media(max-width: 400px) {
+  .showImg {
+    width: 80%;
+    height: auto;
+  }
+  .contactInfo {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .showImg {
+    width: 40%;
+    height: auto;
+    margin: 1vh 1vw 1vh 1vw;
+  }
+  .contactInfo {
+    width: 40%;
+    height: auto;
+  }
+}

@@ -17,6 +17,10 @@ class ContactYourRep extends Component {
       districtNumber: "",
       federalAndState: [],
       local: [],
+      allReps: [],
+      showAllReps: true,
+      showFedAndStateReps: false,
+      showLocalReps: false,
       normalizedInput: {}
     }
     this.loadClient = this.loadClient.bind(this);
@@ -65,7 +69,7 @@ class ContactYourRep extends Component {
       console.log('error fetching local reps', err);
     }
     
-    return federalAndStateReps.concat(localReps);
+    await this.setState({allReps: federalAndStateReps.slice(2).concat(localReps)});
   }
   // Make sure the client is loaded before calling this method.
   async getFederalAndStateReps() {
@@ -106,7 +110,7 @@ class ContactYourRep extends Component {
   }
 
   render() {
-    const { address } = this.state;
+    const { address, allReps, showAllReps, showFedAndStateReps, showLocalReps, federalAndState, local } = this.state;
     return (
       <div className="ContactYourRep">
           <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
@@ -117,7 +121,12 @@ class ContactYourRep extends Component {
             <input value={address} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
             <button type="submit" onClick={this.getAllReps} className="repFormButton">Who's your rep?</button>
           </form>
-        } 
+        }
+        <div className="repCardGrid container">
+        { showAllReps && allReps.map(rep => <RepCard rep={rep} key={rep.name} />)}
+        { showFedAndStateReps && federalAndState.map(rep => <RepCard rep={rep} key={rep.name} />)}
+        { showLocalReps && local.map(rep => <RepCard rep={rep} key={rep.name} />)}
+        </div> 
       </div>
     );
   }
