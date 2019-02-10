@@ -6,3 +6,4 @@ export { default as Header } from './Header';
 export { default as LearnMore } from './LearnMore';
 export { default as Nav } from './Nav';
 export { default as TakeAction } from './TakeAction';
+export { default as Facts } from './Facts';

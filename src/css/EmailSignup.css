@@ -1,4 +1,9 @@
 .EmailSignup {
   border: 2px solid black;
-  margin-bottom: 2em;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.EmailFormField {
+  padding: 10px;
 }

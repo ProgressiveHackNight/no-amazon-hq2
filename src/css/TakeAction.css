@@ -1,6 +1,6 @@
 .TakeAction {
-  border: 2px solid black;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .TakeAction img {
@@ -11,8 +11,8 @@
 
 #action-text {
   width: 100%;
-  background-color: rgb(255,255,255, 0.8);
-  padding: 1em;
+  background-color: rgb(255,255,255);
   position: absolute;
-  top: 30%;
+  top: 25%;
+  opacity: 0.85;
 }
