@@ -8,15 +8,15 @@ class Header extends Component {
     return (
       <div className="Header">
           <div className="row">
-              <div className="four columns">
+              <div className="twelve columns">
                   <h1>
                       Keep Amazon Out!
                   </h1>
               </div>
-              <div className="four columns">
+              <div className="twelve columns">
                   <img id="frowny-face" src={logo} alt="Amazon Frowny Face"/>
               </div>
-              <div className="four columns">
+              <div className="twelve columns">
                   <h4>
                       Help say no to Amazon HQ2 in Queens
                   </h4>
