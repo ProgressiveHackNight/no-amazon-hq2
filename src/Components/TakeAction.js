@@ -1,28 +1,14 @@
 import React, { Component } from 'react';
 import DropDown from './DropDown';
 import action from '../utils/take-action.jpg';
+import {takeActionContent} from '../utils/content';
 import '../css/TakeAction.css';
 
 class TakeAction extends Component {
   constructor(props){
     super(props);
     this.state = {
-      bullets: [
-        { headline: "Now", 
-          text: [
-            "Sign the petition", 
-            "Host a house party", 
-            "Other option", 
-            "Other other option"
-        ]},
-        { headline: "Upcoming", 
-          text: [
-            "Protest at City Council Meeting on xx/xx", 
-            "Speak out at Community Board Meeting on xx/xx", 
-            "Other event", 
-            "Other other event"
-        ]}
-      ]
+      bullets: takeActionContent
     }
   }
   render() {
