@@ -1,4 +1,24 @@
 .Footer {
-  border: 2px solid black;
-  margin-bottom: 2em;
+  padding: 2em;
+
+  background-color: rgb(255, 183, 96);
+}
+
+.center-container {
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+ 	justify-content: space-around;
+}
+
+.social-logo {
+	width: 60px;
+	height: auto;
+}
+
+a {
+	color: black !important;
+	align-self: center;
+	font-size: 20px;
 }
