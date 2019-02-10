@@ -1,0 +1,23 @@
+.Facts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.Facts img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+}
+
+#facts-text {
+    padding: 20px;
+    width: 75%;
+    margin: 0 auto;
+    background-color: rgb(255,255,255);
+    position: absolute;
+    top: 25%;
+    opacity: 0.85;
+}
