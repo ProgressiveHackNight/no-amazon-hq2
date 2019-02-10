@@ -8,13 +8,18 @@ class Header extends Component {
     return (
       <div className="Header">
           <div className="row">
-              <div className="one column">
-                  <h1 id="header-text">
-                      No Amazon HQ2 in NYC!
+              <div className="four columns">
+                  <h1>
+                      Keep Amazon Out!
                   </h1>
               </div>
-              <div className="eleven columns">
+              <div className="four columns">
                   <img id="frowny-face" src={logo} alt="Amazon Frowny Face"/>
+              </div>
+              <div className="four columns">
+                  <h4>
+                      Help say no to Amazon HQ2 in Queens
+                  </h4>
               </div>
           </div>
 
