@@ -1,3 +1,44 @@
 .Nav {
+  background-color: #fafafa;
+  display: flex;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.nav-logo {
   background-color: rgb(255, 183, 96);
+  height: 5rem;
+  width: 5rem;
+  margin: 1rem;
+}
+
+.nav-logo:hover {
+  cursor: pointer;
+}
+
+.Nav .nav-content {
+  max-width: 900px;
+  padding: 0rem 3rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  display: inline;
+  margin-left: 2rem;
+  color: #333;
+}
+
+.nav-item > .active {
+  border-bottom: 2px solid grey;
+}
+
+.nav-item:hover {
+  color: black;
+  cursor: pointer;
 }

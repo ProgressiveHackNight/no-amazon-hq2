@@ -22,7 +22,7 @@ class LearnMore extends Component {
 
   render() {
     return (
-      <div className="LearnMore">
+      <div className="LearnMore" id={this.props.id}>
           <h1>
             Learn More
           </h1>
