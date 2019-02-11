@@ -25,4 +25,5 @@ yarn-error.log*
 src/secrets.js
 
 .idea/*
+*.iml
 
