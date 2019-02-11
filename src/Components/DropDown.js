@@ -20,9 +20,20 @@ class DropDown extends Component {
       <div className="DropDown">
           <h5 id="headline" onClick={this.onClick}>{this.props.headline}</h5>
           {this.state.clicked && 
-            <ul>{this.props.text.map((item, idx)=>{
-              return <li key={idx}>{item}</li>;
-            })}</ul>}
+            <div>
+              <ul>{this.props.text.map((item, idx)=>{
+                return <li key={idx}>{item}</li>;
+              })}</ul>
+              {this.props.sources && 
+                <div>
+                  <p>Sources:</p>
+                  <ul>{this.props.sources.map((item, idx)=>{
+                    return <li key={idx}>{item}</li>;
+                  })}</ul>
+                </div>
+              }
+            </div>
+          }
       </div>
     );
   }
