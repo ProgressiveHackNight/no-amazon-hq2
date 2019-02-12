@@ -9,11 +9,11 @@ class App extends Component {
       <div className="App">
         <Nav/>
         <Header/>
-        <Facts/>
-        <LearnMore/>
-        <TakeAction/>
-        <ContactYourRep/>
-        <EmailSignup/>
+        <Facts id="facts"/>
+        <LearnMore id="learn-more"/>
+        <TakeAction id="take-action"/>
+        <ContactYourRep id="contact-rep"/>
+        <EmailSignup id="signup"/>
         <Footer/>
       </div>
     );

@@ -6,7 +6,7 @@ import '../css/skeleton.css';
 class TakeAction extends Component {
     render() {
         return (
-            <div className="Facts">
+            <div className="Facts" id={this.props.id}>
                 <img src={action} alt="Woman holding sign Amazon Causes Gentrification"/>
                 <div id="facts-text">
                     <h1>

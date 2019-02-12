@@ -13,7 +13,7 @@ class TakeAction extends Component {
   }
   render() {
     return (
-      <div className="TakeAction">
+      <div className="TakeAction" id={this.props.id}>
           <img src={action} alt="Woman holding sign Amazon Causes Gentrification"/>
           <div id="action-text">
             <h1>
