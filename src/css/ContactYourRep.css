@@ -1,6 +1,6 @@
 .ContactYourRep {
   border: 2px solid black;
-  margin-bottom: 2em;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
