@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/no-amazon-hq2/static/css/main.64b39b8c.chunk.css"
   },
   {
-    "revision": "8fd1c76ccec2fb635a1d5eb937164bb7",
+    "revision": "19b65810c2f15b13c29d11255718ff6e",
     "url": "/no-amazon-hq2/index.html"
   }
 ];
