@@ -5,5 +5,7 @@ export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as LearnMore } from './LearnMore';
 export { default as Nav } from './Nav';
+export { default as RepCard } from './RepCard';
+export { default as RepGrid } from './RepGrid';
 export { default as TakeAction } from './TakeAction';
 export { default as Facts } from './Facts';

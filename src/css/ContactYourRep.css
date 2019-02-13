@@ -14,10 +14,14 @@
   border: none;
 }
 
-/*.repFormButton {*/
-  /*width: 10vw;*/
-  /*height: 5vh;*/
-  /*color: blue;*/
-  /*margin: 5%;*/
-/*}*/
+.border {
+  border: 0.1em solid black;
+  margin: 0;
+  padding: 0;
+}
+
+.repPhoto {
+  width: 20vw;
+  height: 25vh;
+}
 

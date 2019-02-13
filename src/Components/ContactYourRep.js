@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 
 import '../css/ContactYourRep.css';
-import { RepCard } from './index';
+import { RepGrid} from './index';
 import { googleKey } from '../secrets';
 import { getOCDID } from '../utils/lookup';
 
 const google = require('google-client-api');
 
+const fakeReps = [
+    { name: 'Andrew Cuomo'}, { name: 'Rocky Fine'}, { name: 'Abigail Demsas'}, { name: 'Lindsay Sack' }, { name: 'Chris Ernst' }, { name: 'Rapi Castillo'},
+    { name: 'Andrew Cuomo'}, { name: 'Rocky Fine'}, { name: 'Abigail Demsas'}, { name: 'Lindsay Sack' }, { name: 'Chris Ernst' }, { name: 'Rapi Castillo'},
+    { name: 'Andrew Cuomo'}, { name: 'Rocky Fine'}, { name: 'Abigail Demsas'}, { name: 'Lindsay Sack' }, { name: 'Chris Ernst' }, { name: 'Rapi Castillo'},
+    { name: 'Andrew Cuomo'}, { name: 'Rocky Fine'}, { name: 'Abigail Demsas'}, { name: 'Lindsay Sack' }, { name: 'Chris Ernst' }, { name: 'Rapi Castillo'}
+]
+
+/**
+ * 1. get num reps
+ * 2. divide into groups of #
+ * 3. */
 class ContactYourRep extends Component {
   constructor() {
     super();
@@ -17,6 +28,7 @@ class ContactYourRep extends Component {
       districtNumber: "",
       federalAndState: [],
       local: [],
+        allReps: [],
       normalizedInput: {}
     }
     this.loadClient = this.loadClient.bind(this);
@@ -65,7 +77,7 @@ class ContactYourRep extends Component {
       console.log('error fetching local reps', err);
     }
     
-    return federalAndStateReps.concat(localReps);
+    await this.setState({ allReps: federalAndStateReps.concat(localReps) });
   }
   // Make sure the client is loaded before calling this method.
   async getFederalAndStateReps() {
@@ -106,18 +118,46 @@ class ContactYourRep extends Component {
   }
 
   render() {
-    const { address } = this.state;
+    const { address, allReps } = this.state;
+    console.log('these are all the reps: ', allReps);
     return (
       <div className="ContactYourRep" id={this.props.id}>
-          <h1 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
+          <h2 className="repHeader" onClick={this.toggleForm} style={{padding: "2%"}}>
             Contact Your Rep
-          </h1>
+          </h2>
         { this.state.showForm && 
           <form style={{display: "flex", flexDirection: "column"}}>
             <input value={address} name="addressLine1" type="text" placeholder="Address Line 1" className="repFormInput" onChange={this.handleChange}/>
             <button type="submit" onClick={this.getAllReps} className="repFormButton">Who's your rep?</button>
           </form>
-        } 
+        }
+          { allReps.length > 0 && <RepGrid reps={allReps}/> }
+          {/*<div className="container">*/}
+              {/*<div class="row">*/}
+                  {/*/!*map first four reps*!/*/}
+                  {/*<div class="two columns border">{fakeReps[0].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[1].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[2].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[3].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[4].name}</div>*/}
+              {/*</div>*/}
+              {/*<div className="row">*/}
+                  {/*/!*map next 4 reps*!/*/}
+                  {/*<div className="two columns border">{fakeReps[0].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[1].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[2].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[3].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[4].name}</div>*/}
+              {/*</div>*/}
+              {/*<div className="row">*/}
+                  {/*/!*map next 4 reps*!/*/}
+                  {/*<div className="two columns border">{fakeReps[0].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[1].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[2].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[3].name}</div>*/}
+                  {/*<div className="two columns border">{fakeReps[4].name}</div>*/}
+              {/*</div>*/}
+          {/*</div>*/}
       </div>
     );
   }
