@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ContactYourRep, DropDown, EmailSignup, Footer, Header, LearnMore,  Nav, TakeAction, Facts, DownloadableResources } from './Components';
+import { ContactYourRep, EmailSignup, Footer, Header, LearnMore,  Nav, TakeAction, Facts, DownloadableResources} from './Components';
 import './App.css';
 
 
@@ -9,12 +9,12 @@ class App extends Component {
       <div className="App">
         <Nav/>
         <Header/>
-        <Facts/>
-        <LearnMore/>
-        <TakeAction/>
-        <ContactYourRep/>
-        <EmailSignup/>
-        <DownloadableResources/>
+        <Facts id="facts"/>
+        <LearnMore id="learn-more"/>
+        <TakeAction id="take-action"/>
+        <ContactYourRep id="contact-rep"/>
+        <EmailSignup id="signup"/>
+        <DownloadableResources id="downloadable-sources"/>
         <Footer/>
       </div>
     );

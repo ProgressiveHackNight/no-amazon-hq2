@@ -5,7 +5,7 @@ import '../css/skeleton.css';
 class EmailSignup extends Component {
   render() {
     return (
-      <div className="EmailSignup">
+      <div className="EmailSignup" id={this.props.id}>
           <h2>
             Sign up for the mailing list
           </h2>

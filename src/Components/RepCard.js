@@ -25,7 +25,7 @@ export default class RepCard extends Component {
     const { name, imgUrl, phone, email } = this.props;
     const { twitterHandle, facebookHandle } = this.state;
     return (
-      <div>
+      <div id={this.props.id}>
         <img src={imgUrl} alt="rep"/>
         <h2>{name}</h2>
         {phone && <h3>Phone: {phone}</h3>}
