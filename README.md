@@ -9,6 +9,8 @@ Scripts:
 
 `npm start` runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will automatically reload if you make edits (woot!)
 
+If you get an error referencing a variable called 'googleKey', go into ContactYourRep.js and comment out the lines referencing 'googleKey'. This api key is only necessary for the form in the contact your rep section. 
+
 ## Site Outline:
 
 - Sticky Nav
