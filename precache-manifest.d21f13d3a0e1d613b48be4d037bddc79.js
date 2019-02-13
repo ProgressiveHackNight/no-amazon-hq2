@@ -16,27 +16,27 @@ self.__precacheManifest = [
     "url": "/no-amazon-hq2/static/media/facebook.a60e6562.png"
   },
   {
-    "revision": "043e8e7bf7e00a5585406e78a32a7c6b",
-    "url": "/no-amazon-hq2/static/media/canvassing.043e8e7b.jpg"
+    "revision": "bb4fb698c1d3f3db6942cc84ce9ce180",
+    "url": "/no-amazon-hq2/static/media/canvassing-group.bb4fb698.jpg"
   },
   {
     "revision": "f943f116820251cd6573",
     "url": "/no-amazon-hq2/static/js/runtime~main.f943f116.js"
   },
   {
-    "revision": "851e2bc9e88784d7823b",
-    "url": "/no-amazon-hq2/static/js/main.851e2bc9.chunk.js"
+    "revision": "c40299e1edb4311c450b",
+    "url": "/no-amazon-hq2/static/js/main.c40299e1.chunk.js"
   },
   {
-    "revision": "67b6271173ccdc94174b",
-    "url": "/no-amazon-hq2/static/js/1.67b62711.chunk.js"
+    "revision": "ad543fff5d927fc4ed32",
+    "url": "/no-amazon-hq2/static/js/1.ad543fff.chunk.js"
   },
   {
-    "revision": "851e2bc9e88784d7823b",
-    "url": "/no-amazon-hq2/static/css/main.64b39b8c.chunk.css"
+    "revision": "c40299e1edb4311c450b",
+    "url": "/no-amazon-hq2/static/css/main.4b5ed485.chunk.css"
   },
   {
-    "revision": "19b65810c2f15b13c29d11255718ff6e",
+    "revision": "83657be07b447ad9ce186caee1e26c92",
     "url": "/no-amazon-hq2/index.html"
   }
 ];
