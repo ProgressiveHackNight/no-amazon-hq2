@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Nav/>
         <Header/>
-        <Facts id="facts"/>
+        {/*<Facts id="facts"/>*/}
         <LearnMore id="learn-more"/>
         <TakeAction id="take-action"/>
         <ContactYourRep id="contact-rep"/>

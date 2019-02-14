@@ -1,12 +1,14 @@
 .Header {
-  background-color: rgb(255, 183, 96);
-  margin-bottom: 20px;
+  background-color: rgba(255, 183, 96, 0.4);
+}
+
+.headerImg {
+  background-image: url('../utils/canvassing.jpg');
+  height: 100%;
+  width: 100%;
 }
 
 #frowny-face {
   height: 200px;
   width: 200px;
-}
-
-#header-text {
 }
