@@ -1,5 +1,15 @@
 .DownloadableResources {
     border: 2px solid black;
-    padding: 20px;
+    padding: 2rem;
     margin-bottom: 2em;
+}
+
+.accordian-title {
+    cursor: pointer;
+}
+
+a.Downloadable {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 2rem;
 }
