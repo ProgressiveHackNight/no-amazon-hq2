@@ -1,3 +1,7 @@
+.HeaderContainer {
+  width: 100vw;
+  overflow: hidden;
+}
 .Header {
   background-color: rgba(255, 183, 96, 0.4);
   display: flex;

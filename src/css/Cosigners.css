@@ -1,0 +1,43 @@
+.Cosigners .full-list {
+  padding: 10px 10%;
+}
+.Cosigners .full-list ul {
+    column-count: 2;
+}
+
+.Cosigners .full-list ul li{
+  list-style: none;
+  text-align: left;
+}
+
+.Cosigners h1 {
+  letter-spacing: 2px;
+  color: var(--blue);
+}
+
+.Cosigners .coordinating-committee {
+  text-align: center;
+}
+
+.Cosigners .coordinating-committee ul li {
+  text-align: center;
+  list-style-type: none;
+  display: inline-block;
+  margin: 20px;
+}
+
+.Cosigners .coordinating-committee ul li img {
+  width: 150px;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: opacity 0.4s, filter 0.4s;
+}
+
+.Cosigners .coordinating-committee ul li a:hover img {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.Cosigners h1 {
+  text-transform: uppercase;
+}

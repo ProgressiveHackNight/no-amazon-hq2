@@ -14,7 +14,7 @@ class App extends Component {
         <TakeAction id="take-action"/>
         {/*<ContactYourRep id="contact-rep"/>*/}
         <Cosigners id='cosigners' />
-        <EmailSignup id="signup"/>
+        {/*<EmailSignup id="signup"/> */}
         
         <Footer/>
       </div>

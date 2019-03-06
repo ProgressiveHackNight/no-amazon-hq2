@@ -63,18 +63,7 @@ class Nav extends Component {
                 Cosigners
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                activeClass="active"
-                to="signup"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Get Updates
-              </Link>
-            </li>
+          
           </ul>
         </div>
 
