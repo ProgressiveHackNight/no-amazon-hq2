@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { ContactYourRep, EmailSignup, Footer, Header, LearnMore,  Nav, TakeAction, Facts } from './Components';
+import { EmailSignup, Footer, Header, LearnMore,  Nav, TakeAction, Facts } from './Components';
 import './App.css';
 
-
+//ContactYourRep, 
 class App extends Component {
   render() {
     return (
@@ -12,7 +12,7 @@ class App extends Component {
         {/*<Facts id="facts"/>*/}
         <LearnMore id="learn-more"/>
         <TakeAction id="take-action"/>
-        <ContactYourRep id="contact-rep"/>
+        {/*<ContactYourRep id="contact-rep"/>*/}
         <EmailSignup id="signup"/>
         <Footer/>
       </div>
