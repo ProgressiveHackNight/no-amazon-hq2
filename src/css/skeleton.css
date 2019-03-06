@@ -431,6 +431,7 @@ there.
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 800;
+  display: inline-block;
 }
 
 .btn:hover {

@@ -1,6 +1,27 @@
 .TakeAction {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.TakeAction .TakeActionViewport {
+  width: 70%;
+  display: inline-block;
+  padding-bottom: 50px;
+}
+
+.TakeActionViewport p {
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  line-height: 39px;
+  margin-bottom: 40px;
+}
+.TakeActionViewport h1 {
+  text-transform: uppercase;
+  color: var(--blue);
+  letter-spacing: 2px;
 }
 
 .TakeAction img {
