@@ -1,5 +1,6 @@
 .DropDown {
-  padding: 0 5em 0 5em;
+  padding: 0 3em 0 3em;
+  width: 33%;
 }
 
 #headline {
@@ -18,6 +19,30 @@
   text-align: left;
 }
 
+.DropDown .learn-more-area {
+  margin-top: 40px;
+}
 .DropDown li {
   margin: 0;
+}
+
+.DropDown .sources p {
+  margin-bottom: 0;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.DropDown .source-list {
+
+}
+
+.DropDown .source-list li {
+  margin-right: 10px;
+  display: inline-block;
+  color: white;
+}
+.DropDown .source-list li a {
+  font-size: 12px !important;
+  color: white !important;
 }

@@ -11,14 +11,11 @@ class Nav extends Component {
     return (
       <nav className="Nav">
          <div className="nav-content">
-          <img
-            src={logo}
-            className="nav-logo"
-            alt="Logo"
-            onClick={this.scrollToTop}
-          />
+          <div className='nav-logo'>
+            <span>NEIGHBORS BEYOND <strong>AMAZON</strong></span>
+          </div>
           <ul className="nav-items">
-            <li className="nav-item">
+            {/*<li className="nav-item">
               <Link
                 activeClass="active"
                 to="facts"
@@ -29,7 +26,7 @@ class Nav extends Component {
               >
                 Facts
               </Link>
-            </li>
+            </li>*/}
             <li className="nav-item">
               <Link
                 activeClass="active"
@@ -57,13 +54,13 @@ class Nav extends Component {
             <li className="nav-item">
               <Link
                 activeClass="active"
-                to="contact-rep"
+                to="cosigners"
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
               >
-                Contact Your Representatives
+                Cosigners
               </Link>
             </li>
             <li className="nav-item">

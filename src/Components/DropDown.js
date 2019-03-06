@@ -25,10 +25,10 @@ class DropDown extends Component {
                 return <li key={idx}>{item}</li>;
               })}</ul>
               {this.props.sources && 
-                <div>
+                <div className='sources'>
                   <p>Sources:</p>
-                  <ul>{this.props.sources.map((item, idx)=>{
-                    return <li key={idx}>{item}</li>;
+                  <ul className='source-list'>{this.props.sources.map((item, idx)=>{
+                    return <li key={idx}><a href={item}>{item.replace(/http.*\/\/(.*?)\/.*/g, "$1")}</a></li>;
                   })}</ul>
                 </div>
               }
