@@ -60,3 +60,23 @@
   color: black;
   cursor: pointer;
 }
+
+@media screen and (max-width: 700px) {
+
+  nav.Nav .nav-content {
+    flex-direction: column;
+    padding: 0;
+  }
+  nav.Nav .nav-logo {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    height: auto;
+  }
+  nav.Nav .nav-items {
+    margin-bottom: 10px;
+  }
+  nav.Nav .nav-items .nav-item {
+    margin: 5px 10px;
+  }
+}
