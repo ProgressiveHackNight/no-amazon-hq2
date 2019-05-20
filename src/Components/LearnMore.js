@@ -48,12 +48,9 @@ class LearnMore extends Component {
           <h1>
             Community at the center
           </h1>
-          <iframe width="900" height="515" src="https://www.youtube.com/embed/0yjX2wN3oUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="900" height="515" src="https://www.youtube.com/embed/1oUzpw6L52k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div className='learn-more-area'>
-          {this.state.bullets.map((bullet)=>{
-              return <DropDown key={bullet.headline} headline={bullet.headline} text={bullet.text} sources={bullet.sources}/>
-            })
-          }
+          
           </div>
       </div>
     );
@@ -61,3 +58,7 @@ class LearnMore extends Component {
 }
 
 export default LearnMore;
+// {this.state.bullets.map((bullet)=>{
+//     return <DropDown key={bullet.headline} headline={bullet.headline} text={bullet.text} sources={bullet.sources}/>
+//   })
+// }

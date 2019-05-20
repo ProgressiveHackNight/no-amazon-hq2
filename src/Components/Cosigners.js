@@ -19,7 +19,7 @@ class Cosigners extends Component {
           <div id="cosigners-text">
 
 
-            <h1>Coordinating Committee [SAMPLE]</h1>
+            <h1>Coordinating Committee</h1>
             <div className='coordinating-committee'>
               <ul>
                 {this.state.steering.map((item,ind) => (
@@ -32,7 +32,7 @@ class Cosigners extends Component {
               </ul>
             </div>
 
-            <h1>Cosigners [SAMPLE]</h1>
+            <h1>Cosigners</h1>
             <div className='full-list'>
               <ul>
                 {this.state.all.map((item,ind) => (

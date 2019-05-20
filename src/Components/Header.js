@@ -11,9 +11,11 @@ class Header extends Component {
       <div className="HeaderContainer">
         <div className="Header" style={{backgroundImage: `url(${bgHeader})`}}>
             <div className="hero-area">
-                <h1>Neighbors Beyond Amazon Slogan</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a href='javascript: void(null)' className='btn'>Call to Action</a>
+                <h1>It takes our Neighborhoods to move Beyond Billionaires</h1>
+                <p>All New Yorkers want to live in the best place for our families. That means funding for schools where our kids learn, homes for our families, trains, buses, and roads we take to work, good quality jobs, and all of us having an equal say in decision making. </p>
+                <p>Instead, corporations demand backroom deals while they deny our rights as working people, run our local stores out of business, price us out of our neighborhoods, and dodge taxes to increase profit. For all of us to live, work and thrive here, we must rise against corporations that have rigged the rules. </p>
+                <p><strong>New Yorkers proved by standing up to Amazon that when our neighborhoods are united, we can win. Together, we can make this a place where we have the schools, jobs, transportation, and housing that New Yorkers need.</strong></p>
+                <a href='https://actionnetwork.org/petitions/sign-the-petition-amazons-hq2-will-only-harm-new-yorkers-reject-the-hq2-scam-now' target="_blank"  className='btn'>JOIN US</a>
             </div>
         </div>
       </div>

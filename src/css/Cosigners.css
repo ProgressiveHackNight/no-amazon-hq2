@@ -41,3 +41,13 @@
 .Cosigners h1 {
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 700px) {
+  .Cosigners .full-list ul  {
+    column-count: 1;
+  }
+
+  .Cosigners .full-list ul  li {
+    text-align: center;
+  }
+}
