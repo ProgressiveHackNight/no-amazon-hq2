@@ -62,6 +62,8 @@ export const cosigners = {
     "Laundry Workers Center",
     "Legal Services Staff Association, NOLSW/UAW 2320",
     "Long Island Activists",
-    "Long Island City Coalition"
+    "Long Island City Coalition",
+    "Progressive HackNight",
+    "Queens United Independent Progressives"
   ]
 }
